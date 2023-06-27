@@ -16,5 +16,7 @@ export default function handleProfileSignup(firstName, lastName, fileName) {
         }
       });
       return result;
-    });
+      // eslint-disable-next-line comma-dangle
+    }
+  );
 }
