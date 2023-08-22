@@ -1,12 +1,12 @@
 const fs = require('fs');
 
 const countStudents = (file) => {
+  const students = {};
+  const fields = {};
   try {
     const content = fs.readFileSync(file, 'utf-8');
 
     const lines = content.toString().split('\n');
-    const students = {};
-    const fields = {};
 
     const len = lines.length;
 
