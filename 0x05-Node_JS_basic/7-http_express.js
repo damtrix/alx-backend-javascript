@@ -46,22 +46,19 @@ function countStudents(fileName) {
   });
 }
 
-app.get('/', (request, response) => {
-  response.send('Hello Holberton School!');
+app.get('/', (req, res) => {
+  res.send('Hello Holberton School!');
 });
-app.get('/students', (request, response) => {
+app.get('/students', (req, res) => {
   countStudents(process.argv[2].toString())
     .then((output) => {
-      response.send(['This is the list of our students', output].join('\n'));
+      res.send(['This is the list of our students', output].join('\n'));
     })
     .catch(() => {
-      response.send(
-        // eslint-disable-next-line comma-dangle
-        'This is the list of our students\nCannot load the database'
-      );
+      res.send('This is the list of our students\nCannot load the database');
     });
 });
-x;
+
 app.listen(port, () => {});
 
 module.exports = app;
